@@ -1,0 +1,13 @@
+# Example Wallet File Format
+# This is a template showing the format of wallet files
+# NEVER commit real wallet files to GitHub
+
+# Wallet files should be stored as JSON arrays of bytes like this:
+# (These are dummy values for illustration purposes only)
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+
+# The actual wallet files used in this project are:
+# - dev-wallet.json: Used for development and testing
+# - turbin3-wallet.json: Used for the Turbin3 challenge
+
+# These files are excluded from git by the .gitignore file

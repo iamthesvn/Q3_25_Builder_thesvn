@@ -1,0 +1,18 @@
+/target
+
+# Wallet files
+*.json
+
+# Environment variables
+.env
+
+# Rust build artifacts
+Debug/
+Release/
+
+# IDE files
+.idea/
+.vscode/
+
+# macOS files
+.DS_Store
