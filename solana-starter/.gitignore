@@ -1,0 +1,15 @@
+*wallet.json
+*.keypair
+*.pem
+*.key
+*.secret
+.env*
+node_modules
+target
+.DS_Store
+.anchor
+.idea
+.vscode
+dist
+build
+*.log
