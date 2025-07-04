@@ -16,11 +16,22 @@ umi.use(mplTokenMetadata())
 const mint = generateSigner(umi);
 
 (async () => {
-    // let tx = ???
-    // let result = await tx.sendAndConfirm(umi);
-    // const signature = base58.encode(result.signature);
-    
-    // console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
+    let tx = createNft(umi, {
+        mint,
+        name: `thesvn's rug`,
+        symbol: "SVNR",
+        uri: "https://gateway.irys.xyz/EBHxNZnv6d3MTmbb2jhL22wzc1CvqBjzJJ8gW87GKSAB",
+        sellerFeeBasisPoints: percentAmount(5), // 5% royalty
+    });
+
+    let result = await tx.sendAndConfirm(umi);
+    const signature = base58.encode(result.signature);
+
+    console.log(`Succesfully Minted! Check out your TX here:\nhttps://explorer.solana.com/tx/${signature}?cluster=devnet`)
 
     console.log("Mint Address: ", mint.publicKey);
 })();
+
+// Succesfully Minted! Check out your TX here:
+// https://explorer.solana.com/tx/3RCgKwm2mSTcyYhVgrMnFpyC66obZ9gDdtrhmCUyH43Z6rQ6gHM1YKTeNYLGNhLgYSLm9TGmHRcVDyzgyz5bpyTK?cluster=devnet
+// Mint Address:  C3b5XPnAB1xEwtrGV6awRpSMRk2zVCe7ynkJFRPFRUkx

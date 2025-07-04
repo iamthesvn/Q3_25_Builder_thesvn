@@ -10,21 +10,30 @@ const umi = createUmi('https://api.devnet.solana.com');
 let keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(wallet));
 const signer = createSignerFromKeypair(umi, keypair);
 
-umi.use(irysUploader());
+umi.use(irysUploader({ address: "https://devnet.irys.xyz/", }));
 umi.use(signerIdentity(signer));
 
 (async () => {
     try {
         //1. Load image
+        const imageBuff = await readFile(`./generug.png`)
         //2. Convert image to generic file.
+        const file = createGenericFile(imageBuff, "generun.png", { contentType: "image/png" });
         //3. Upload image
 
         // const image = ???
 
-        // const [myUri] = ??? 
-        // console.log("Your image URI: ", myUri);
+        const [myUri] = await umi.uploader.upload([file]);
+        console.log("Your image URI: ", myUri);
+        console.log("Your image URI: ", myUri);
     }
-    catch(error) {
+    catch (error) {
         console.log("Oops.. Something went wrong", error);
     }
 })();
+
+//https://gateway.irys.xyz/8ckgvAzGtcpp7yY5BECTB52BaKsqJYxz6daUxLafinvr
+
+// Your image URI:  https://gateway.irys.xyz/BcV6d2aaEHeHBEpz5RkgNCJxTdYoNQi97LKi6z3qaHGq
+
+// Your image URI:  https://gateway.irys.xyz/6D8KRy2VpNoHbKJ3kX9oQves2WDSjxQntJc3LznGouEw
