@@ -32,8 +32,4 @@ umi.use(signerIdentity(signer));
     }
 })();
 
-//https://gateway.irys.xyz/8ckgvAzGtcpp7yY5BECTB52BaKsqJYxz6daUxLafinvr
-
-// Your image URI:  https://gateway.irys.xyz/BcV6d2aaEHeHBEpz5RkgNCJxTdYoNQi97LKi6z3qaHGq
-
 // Your image URI:  https://gateway.irys.xyz/6D8KRy2VpNoHbKJ3kX9oQves2WDSjxQntJc3LznGouEw
